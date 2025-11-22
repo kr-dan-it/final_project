@@ -32,7 +32,7 @@ python .\manage.py migrate
 python .\manage.py runserver
 ```
 
-## About iris_ml
+## About iris_ml:
 iris_ml contains several files, out of which the significant ones are: 
 1) Rohal_tasks_1-2.ipynb, which is a Jupyter notebook containing parts 1 (Аналіз та підготовка даних) and 2 (Розробка моделі машинного навчання) of my homework. 
 2) Rohal_task_3.ipynb, which is a Jupyter notebook containing part 3 (Візуалізація даних) of my homework. 
@@ -43,7 +43,7 @@ iris_ml contains several files, out of which the significant ones are:
 Everything in tasks 1-2 and 3 has been documented in its respective jupyter notebooks. 
 
 
-## About iris_prediction
+## About iris_prediction:
 iris_prediction contains the django website for my project, which is also part 4 (Розробка веб-сторінки у Django) and 5 (Тестування та валідація) of my homework. 
 
 It has an app called dashboard, the main part called iris_prediction, and folders ml_model, which contains the joblib file with the model, and templates, which contains the templates used.
