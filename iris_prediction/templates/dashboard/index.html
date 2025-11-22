@@ -1,0 +1,47 @@
+{% extends 'partials/base.html' %}
+
+{% block title %} Home {% endblock %}
+
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-md-8 offset-md-2">
+            <div class="card shadow">
+                <div class="card-body" style="background-color: rgba(211, 211, 199, 0.8);">
+                    <form method="POST">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <input class="btn btn-info" type="submit" value="Make Prediction">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br>
+<br>
+
+<div class="container">
+    <div class="card shadow">
+        <div class="card-body">
+            Hello. This project uses the <a href="https://www.kaggle.com/datasets/samybaladram/iris-dataset-extended">Extended Iris Dataset</a>
+            from Kaggle. The description from the Kaggle site linked above reads the following:
+            <br>
+            <p>
+                This CSV file contains an extended version of the classic Iris dataset,
+                enriching it with additional attributes and features.
+                The dataset consists of 1200 rows and 21 columns that include both original attributes
+                like 'Species', 'Sepal Length', 'Sepal Width', 'Petal Length', and 'Petal Width',
+                as well as newly added environmental and morphological attributes such as
+                'Elevation', 'Soil Type', and 'Petal Curvature'.
+            </p>
+            <br>
+            Out of the new attributes, I used Elevation, Soil Type, Petal Curvature, and Leaf Area.
+            The page was styled using Bootstrap and Crispy Forms.
+        </div>
+    </div>
+</div>
+<br>
+{% endblock %}

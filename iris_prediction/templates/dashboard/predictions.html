@@ -1,0 +1,42 @@
+{% extends 'partials/base.html' %}
+
+{% block title %} All Predictions {% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-md-8 offset-md-2">
+            <table class="table" style="background-color: rgb(211, 211, 199); border: 0.12rem solid #224179;">
+              <thead>
+                <tr>
+                  <th scope="col" style="background-color: rgb(237, 237, 228); border-bottom: 0.12rem solid #224179;">Iris Type</th>
+                  <th scope="col" style="background-color: rgb(237, 237, 228); border-bottom: 0.12rem solid #224179;">Elevation</th>
+                  <th scope="col" style="background-color: rgb(237, 237, 228); border-bottom: 0.12rem solid #224179;">Soil Type</th>
+                  <th scope="col" style="background-color: rgb(237, 237, 228); border-bottom: 0.12rem solid #224179;">Sepal Length</th>
+                  <th scope="col" style="background-color: rgb(237, 237, 228); border-bottom: 0.12rem solid #224179;">Sepal Width</th>
+                  <th scope="col" style="background-color: rgb(237, 237, 228); border-bottom: 0.12rem solid #224179;">Petal Length</th>
+                  <th scope="col" style="background-color: rgb(237, 237, 228); border-bottom: 0.12rem solid #224179;">Petal Width</th>
+                  <th scope="col" style="background-color: rgb(237, 237, 228); border-bottom: 0.12rem solid #224179;">Petal Curvature</th>
+                  <th scope="col" style="background-color: rgb(237, 237, 228); border-bottom: 0.12rem solid #224179;">Leaf Area (square cm)</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for data in predicted_iris %}
+                <tr>
+                  <th scope="row" style="border-bottom: 0.12rem solid #224179;">{{ data.predictions }}</th>
+                  <td style="border-bottom: 0.12rem solid #224179;">{{ data.elevation }}</td>
+                  <td style="border-bottom: 0.12rem solid #224179;">{{ data.soil_code }}</td>
+                  <td style="border-bottom: 0.12rem solid #224179;">{{ data.sepal_length }}</td>
+                  <td style="border-bottom: 0.12rem solid #224179;">{{ data.sepal_width }}</td>
+                  <td style="border-bottom: 0.12rem solid #224179;">{{ data.petal_length }}</td>
+                  <td style="border-bottom: 0.12rem solid #224179;">{{ data.petal_width }}</td>
+                  <td style="border-bottom: 0.12rem solid #224179;">{{ data.petal_curvature }}</td>
+                  <td style="border-bottom: 0.12rem solid #224179;">{{ data.leaf_area_cm2 }}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
