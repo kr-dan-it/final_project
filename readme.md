@@ -14,17 +14,23 @@ You may find two folders here:
 
 To deploy the Django website locally, do the following: 
 1) activate the environment and install the requirements
-> python -m venv venv
-> venv/Script/activate 
-> pip install -r requirements
+```
+python -m venv venv
+venv/Script/activate 
+pip install -r requirements
+```
 
 2) migrate the models
-> cd .\iris_prediction\
-> python .\manage.py makemigrations
-> python .\manage.py migrate
+```
+cd .\iris_prediction\
+python .\manage.py makemigrations
+python .\manage.py migrate
+```
 
 3) run
-> python .\manage.py runserver
+```
+python .\manage.py runserver
+```
 
 ## About iris_ml
 iris_ml contains several files, out of which the significant ones are: 
