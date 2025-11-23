@@ -3,7 +3,6 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 from sklearn.ensemble import RandomForestClassifier
 import joblib
 
-# elevation	soil_code	sepal_length	sepal_width	petal_length	petal_width	petal_curvature_mm	leaf_area_cm2
 SOIL = (
     (0, 'Clay'),
     (1, 'Loamy'),
@@ -11,7 +10,7 @@ SOIL = (
 )
 # Create your models here.
 class Data(models.Model):
-    elevation = models.FloatField(validators=[MinValueValidator(0.0)], null=True)
+    elevation = models.FloatField(validators=[MinValueValidator(0.0), MaxValueValidator(300.0)], null=True)
     soil_code = models.PositiveIntegerField(choices=SOIL, null=True)
     sepal_length = models.FloatField(validators=[MinValueValidator(0.0), MaxValueValidator(10.0)], null=True)
     sepal_width = models.FloatField(validators=[MinValueValidator(0.0), MaxValueValidator(10.0)], null=True)
@@ -35,4 +34,3 @@ class Data(models.Model):
     def __str__(self):
         return f"Iris {self.predictions}"
 
-# Admin / iris_1234
